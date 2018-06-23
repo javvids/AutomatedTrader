@@ -18,16 +18,16 @@ namespace MarketForecasterCore.Tests
         public void Initialize()
         {
             
-            var builder = new ContainerBuilder();
-            builder.RegisterAssemblyModules(Assembly.Load("MarketForecasterCore"));
-            //builder.RegisterType<ROCIndicatorCalculation>().As<ITechnicalIndicatorCalculation<ROCLists, ROCIndicator>>();
+            //var builder = new ContainerBuilder();
+            //builder.RegisterAssemblyModules(Assembly.Load("MarketForecasterCore"));
+            ////builder.RegisterType<ROCIndicatorCalculation>().As<ITechnicalIndicatorCalculation<ROCLists, ROCIndicator>>();
             
-            _container=builder.Build(Autofac.Builder.ContainerBuildOptions.IgnoreStartableComponents);
+            //_container=builder.Build(Autofac.Builder.ContainerBuildOptions.IgnoreStartableComponents);
             
 
         }
 
-        private IContainer _container;
+        //private IContainer _container;
         private ROCLists _rocLists;
 
         [TestMethod]
