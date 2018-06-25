@@ -8,6 +8,8 @@ namespace AutomatedTrader.Sharedkernel.Model
 {
     public abstract class Entity<TId> : IEquatable<Entity<TId>>
     {
+        public string TableName { get; protected set; }
+
         public TId Id { get; protected set; }
 
         protected Entity(TId id)

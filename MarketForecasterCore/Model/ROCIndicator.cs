@@ -1,5 +1,4 @@
-﻿using System;
-using AutomatedTrader.Sharedkernel.Enum;
+﻿using AutomatedTrader.SharedKernel;
 
 namespace MarketForeCasterCore.Model
 {
@@ -10,7 +9,7 @@ namespace MarketForeCasterCore.Model
             Quote market, TriggerDetail triggerDetail)
         {
 
-            var macd = new ROCIndicator()
+            var roc = new ROCIndicator()
             {
                 ROC14Days = eMA9Day,
                 EMA9Day = eMA12Day,
@@ -18,8 +17,11 @@ namespace MarketForeCasterCore.Model
                 Quote =market,
                 TriggerDetail =triggerDetail
             };
+
+            roc.Id = $"{market.Today.ToShortDateString()}";
+            roc.TableName = Constants.ROCTableName;
             
-            return macd;
+            return roc;
         }
 
         public void SetTriggerDetail(TriggerDetail triggerDetail)

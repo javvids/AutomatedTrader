@@ -11,4 +11,10 @@ namespace AutomatedTrader.Sharedkernel.Enum
         Buy,
         Sell
     }
+
+    public enum StockExchangeEnum
+    {
+        BSE,
+        NSE
+    }
 }

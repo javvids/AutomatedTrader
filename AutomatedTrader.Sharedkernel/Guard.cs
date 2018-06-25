@@ -29,6 +29,19 @@ namespace AutomatedTrader.SharedKernel
                 throw new ArgumentException(errorMessage);
             }
         }
+
+        public static void IsNull<T>(T guardValue, string errorMessage)
+        {
+            if (guardValue==null)
+            {
+                throw new ArgumentException(errorMessage);
+            }
+
+            if (typeof(T) == typeof(System.String) && string.IsNullOrWhiteSpace(guardValue as string))
+            {
+                throw new ArgumentException(errorMessage);
+            }
+        }
     }
 
     

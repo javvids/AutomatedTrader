@@ -7,11 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedKernell", "SharedKern
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedTrader.Sharedkernel", "AutomatedTrader.Sharedkernel\AutomatedTrader.Sharedkernel.csproj", "{3268CEA0-248F-4910-8013-19E0A778BC26}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculator", "Calculator", "{3EA8C7CB-5D2C-4B3E-80AF-A7CB708E9BCD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketForecasterCore", "MarketForecasterCore\MarketForecasterCore.csproj", "{617FA185-FA4C-4DD7-BB41-DEF9F94D7A38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketForecasterCore.Tests", "MarketForecasterCore.Tests\MarketForecasterCore.Tests.csproj", "{3024C413-2B89-4EFD-AA31-8664147E4931}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MarketMonitor", "MarketMonitor", "{12984A5D-9F96-4F9B-B751-9762F57CB1CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TechnicalCalculator", "TechnicalCalculator", "{4FF59A3B-3F16-46A8-9103-A24DE00AB766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedTrader.MarketMonitor", "AutomatedTrader.MarketMonitor\AutomatedTrader.MarketMonitor.csproj", "{C9331BC7-B366-41CC-A4AC-44D8AB86F5F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedTrader.Trigger", "AutomatedTrader.Trigger\AutomatedTrader.Trigger.csproj", "{D148B294-2351-4BAE-9B7C-9332B7D06338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,12 +37,22 @@ Global
 		{3024C413-2B89-4EFD-AA31-8664147E4931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3024C413-2B89-4EFD-AA31-8664147E4931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3024C413-2B89-4EFD-AA31-8664147E4931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9331BC7-B366-41CC-A4AC-44D8AB86F5F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9331BC7-B366-41CC-A4AC-44D8AB86F5F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9331BC7-B366-41CC-A4AC-44D8AB86F5F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9331BC7-B366-41CC-A4AC-44D8AB86F5F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D148B294-2351-4BAE-9B7C-9332B7D06338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D148B294-2351-4BAE-9B7C-9332B7D06338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D148B294-2351-4BAE-9B7C-9332B7D06338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D148B294-2351-4BAE-9B7C-9332B7D06338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3268CEA0-248F-4910-8013-19E0A778BC26} = {7C4B5B31-2746-4980-B341-348A9C30E15E}
+		{617FA185-FA4C-4DD7-BB41-DEF9F94D7A38} = {4FF59A3B-3F16-46A8-9103-A24DE00AB766}
+		{C9331BC7-B366-41CC-A4AC-44D8AB86F5F1} = {12984A5D-9F96-4F9B-B751-9762F57CB1CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF08F277-DDDB-4C48-B035-BB8FA0B824A0}

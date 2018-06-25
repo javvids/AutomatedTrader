@@ -6,7 +6,7 @@ using AutomatedTrader.Sharedkernel.Model;
 namespace MarketForeCasterCore.Model
 {
 
-    public abstract class Indicator : Entity<long>
+    public abstract class Indicator : Entity<string>
     {
         
         public void SetTriggerDetail(TriggerDetail triggerDetail)
