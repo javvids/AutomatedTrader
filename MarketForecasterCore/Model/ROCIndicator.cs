@@ -1,7 +1,4 @@
-﻿using System;
-using AutomatedTrader.Sharedkernel.Enum;
-
-namespace MarketForeCasterCore.Model
+﻿namespace MarketForeCasterCore.Model
 {
 
     public sealed class ROCIndicator : Indicator

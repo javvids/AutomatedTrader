@@ -29,6 +29,14 @@ namespace AutomatedTrader.SharedKernel
                 throw new ArgumentException(errorMessage);
             }
         }
+
+        public static void IsNullOrEmpty<T,TValue>(IDictionary<T,TValue> guardValue, string errorMessage)
+        {
+            if (guardValue.IsNullOrEmpty())
+            {
+                throw new ArgumentException(errorMessage);
+            }
+        }
     }
 
     
