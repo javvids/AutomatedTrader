@@ -9,7 +9,7 @@ namespace AutomatedTrader.Sharedkernel.Repository
     {
         private void Connect()
         {
-            CloudStorageAccount cloudStorage = new CloudStorageAccount()
+            //CloudStorageAccount cloudStorage = new CloudStorageAccount();
 
         }
     }

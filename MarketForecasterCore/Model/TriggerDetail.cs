@@ -6,7 +6,7 @@ namespace MarketForeCasterCore.Model
 {
     public class TriggerDetail: Entity<long>
     {
-        public static TriggerDetail Create(bool isTriggered, DateTime triggerTime, double triggeredPrice, TradeTypeEnum tradeType)
+        public static TriggerDetail Create(bool isTriggered, DateTime triggerTime, double triggeredPrice, ActionTypeEnum tradeType)
         {
             var triggerDetail = new TriggerDetail() {
                 IsTriggered = isTriggered,
@@ -21,7 +21,7 @@ namespace MarketForeCasterCore.Model
         public bool IsTriggered { get; protected set; }
         public DateTime TriggerTime { get; protected set; }
         public double TriggeredPrice { get; protected set; }
-        public TradeTypeEnum TradeType { get; protected set; }
+        public ActionTypeEnum TradeType { get; protected set; }
 
        
     }

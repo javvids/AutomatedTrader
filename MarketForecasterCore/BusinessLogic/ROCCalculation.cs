@@ -5,14 +5,14 @@ namespace MarketForecasterCore.BusinessLogic
 {
     public static class ROCCalculation
     {
-        public static double CalculcateRocR(IList<Quote> quotes, int rocrDay, int index)
+        public static double CalculcateRocR(IList<double> lastPrice, int rocrDay, int index)
         {
             if (index < rocrDay)
                 return 0;
             
-            var prevPrice = quotes[index - rocrDay].Close;
+            var prevPrice = lastPrice[index - rocrDay];
 
-            var currentPrice = quotes[index].Close;
+            var currentPrice = lastPrice[index];
 
             var roC14 = ((currentPrice - prevPrice) / prevPrice) * 100;
 

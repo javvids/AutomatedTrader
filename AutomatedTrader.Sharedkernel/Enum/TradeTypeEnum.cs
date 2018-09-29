@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace AutomatedTrader.Sharedkernel.Enum
 {
-    public enum TradeTypeEnum
+    public enum ActionTypeEnum
     {
         Buy,
-        Sell
+        Sell,
+        ShortSell
     }
 
     public enum ExchangeTypeEnum
@@ -17,4 +18,20 @@ namespace AutomatedTrader.Sharedkernel.Enum
         BSE,
         NSE
     }
+
+    public enum StockTypeEnum
+    {
+        Equity,
+        Index,
+        Currency,
+        Commodity
+    }
+
+    public enum TradeTypeEnum
+    {
+        Equity,
+        Futures,
+        Options
+    }
+
 }

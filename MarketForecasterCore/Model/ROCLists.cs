@@ -19,7 +19,7 @@ namespace MarketForeCasterCore.Model
 
         private ROCLists CalculateRocR14Days(ROCLists indicators, int index)
         {
-            var rocr14=ROCCalculation.CalculcateRocR(indicators.Select(x => x.Quote).ToList(), 14, index);
+            var rocr14=ROCCalculation.CalculcateRocR(indicators.Select(x => x.Quote.Close).ToList(), 14, index);
             indicators[index].SetROC14Day(rocr14);
             return indicators;
         }
@@ -36,7 +36,7 @@ namespace MarketForeCasterCore.Model
                 return indicators;
             }
 
-            var ema11Day = EMACalculation.CalculcateEMA(indicators.Select(x => new Quote(x.Quote.Today, 0, 0, x.EMA9Day==0?x.Quote.Close:x.EMA9Day, 0))
+            var ema11Day = EMACalculation.CalculcateEMA(indicators.Select(x => x.EMA9Day==0?x.Quote.Close:x.EMA9Day)
                                 .ToList(), 9, index);
 
             indicators[index].SetEMA9Day(ema11Day);
@@ -46,7 +46,7 @@ namespace MarketForeCasterCore.Model
 
         private ROCLists CalculateRocROn9DayEMA(ROCLists indicators, int index)
         {
-            var emaList= indicators.Select(x => new Quote(x.Quote.Today, 0, 0, x.EMA9Day, 0))
+            var emaList= indicators.Select(x => x.EMA9Day)
                                 .ToList();
 
             if (indicators.Where(z => z.EMA9Day > 0).Count() <= 9)
@@ -64,7 +64,7 @@ namespace MarketForeCasterCore.Model
             if (indicators[index].EMA9Day <= 0)
                 return indicators;
 
-            var tradeType = indicators[index].ROC14Days > indicators[index].ROCOnEMA9Day ? TradeTypeEnum.Buy : TradeTypeEnum.Sell;
+            var tradeType = indicators[index].ROC14Days > indicators[index].ROCOnEMA9Day ? ActionTypeEnum.Buy : ActionTypeEnum.Sell;
 
             var isTriggered = indicators[index - 1].TriggerDetail == null || indicators[index - 1].TriggerDetail.TradeType == tradeType ? false : true;
 

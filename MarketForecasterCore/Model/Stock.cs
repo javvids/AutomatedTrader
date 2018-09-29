@@ -1,37 +1,21 @@
-﻿using System.Collections.Generic;
-using AutomatedTrader.Sharedkernel.Enum;
-using AutomatedTrader.Sharedkernel.Model;
-using AutomatedTrader.SharedKernel;
+﻿using AutomatedTrader.Sharedkernel.Enum;
 
-namespace MarketForeCasterCore.Model
+namespace MarketForecasterCore.Model
 {
-    public sealed class Stock : Entity<long>
+    public class Stock
     {
-        public Stock(string stockName, string stockDescription, Dictionary<ExchangeTypeEnum,string> stockCodes)
+        public Stock(string stockName, ExchangeTypeEnum exchange, string stockCode)
         {
             StockName = stockName;
-            StockDescription = stockDescription;
-            StockCodes= stockCodes;
+            Exchange = exchange;
+            StockCode = stockCode;
         }
 
-        public string StockName { get; private set; }
-        public string StockDescription { get; private set; }
-        public Dictionary<string, Quote> StockQuotes { get; private set;}
-        public Dictionary<ExchangeTypeEnum, string> StockCodes { get; private set; }
-        public string PartitionKey { get { return $"{StockName}"; } }
+        public string StockName { get;private set; }
+        public ExchangeTypeEnum Exchange { get;private set; }
+        public string StockCode { get;private set; }
+        public string PartitionKey { get { return $"{StockCode}_{Exchange}"; } }
 
-        public void AddStockQuotes(IEnumerable<Quote> stockQuotes)
-        {
-            Guard.IsNullOrEmpty<Quote>(stockQuotes, "StockQuotes is null or empty");
-            StockQuotes = StockQuotes ?? new Dictionary<string, Quote>();
-
-            foreach (var quote in stockQuotes)
-            {
-                StockQuotes.Add(quote.PartitionKey, quote);
-            }
-        }
 
     }
-
-
 }
